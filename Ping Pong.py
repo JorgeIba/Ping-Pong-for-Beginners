@@ -1,8 +1,8 @@
-#Ping Pong with Turtle - Python for Begginers by Jorge Ibanez
-#Inspired in youtube video: 
+#Ping Pong with Turtle - Python for Beginners by Jorge Ibanez
+#Inspired in youtube video: https://www.youtube.com/watch?v=C6jJg9Zan7w&t=865s
 #------------------------------------------------------------------------
 #Ping Pong con Turtle - Python para principiantes, hecho por Jorge Ibanez
-#Inspirado en el video de youtube:
+#Inspirado en el video de youtube: https://www.youtube.com/watch?v=C6jJg9Zan7w&t=865s
 
 import turtle
 
