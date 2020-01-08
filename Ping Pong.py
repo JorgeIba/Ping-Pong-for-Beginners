@@ -1,10 +1,22 @@
 #Ping Pong with Turtle - Python for Beginners by Jorge Ibanez
 #Inspired in youtube video: https://www.youtube.com/watch?v=C6jJg9Zan7w&t=865s
+<<<<<<< HEAD
 #------------------------------------------------------------------------
 #Ping Pong con Turtle - Python para principiantes, hecho por Jorge Ibanez
 #Inspirado en el video de youtube: https://www.youtube.com/watch?v=C6jJg9Zan7w&t=865s
 
 import turtle
+=======
+#-------------------------------------------------------------------------------
+#Ping Pong con Turtle - Python para principiantes, hecho por Jorge Ibanez
+#Inspirado (más no copiado xd) en el video de youtube: https://www.youtube.com/watch?v=C6jJg9Zan7w&t=865s
+
+import turtle
+import playsound
+import threading 
+#Los módulos "playsound" y "threading" son únicamente para reproducir el sonido, no son indispensable para el juego
+#The modules "playsound" and "threading" are only to reproduce sound, they aren't essential for the game
+>>>>>>> Ver2.0
 
 #Initialization
 ventana = turtle.Screen() #Creating and configuration of the window
@@ -14,6 +26,17 @@ ventana.setup(width = 760, height = 640)
 ventana.delay(0)
 ScoreP1, ScoreP2 = 0, 0
 
+<<<<<<< HEAD
+=======
+#Sonido - Sound
+def Sound():
+	playsound._playsoundWin("impact.mp3", False)
+	#playsound._playsoundOSX("impact.mp3", False)
+	#playsound._playsoundNix("impact.mp3", False)
+def PlaySound(): 
+	threading.Thread(target=Sound).start()
+
+>>>>>>> Ver2.0
 #Raqueta 1 - Paddle 1
 raqueta1 = turtle.Turtle()
 raqueta1.shape("square")
@@ -42,7 +65,11 @@ pelota.goto(0,0)
 pelota.dirX = 1
 pelota.dirY = 1
 
+<<<<<<< HEAD
 #Letras y Puntuacion - Letters and Score
+=======
+#Letras y Puntuación - Letters and Score
+>>>>>>> Ver2.0
 pen = turtle.Turtle()
 pen.speed(0)
 pen.color("white")
@@ -58,7 +85,11 @@ def Draw():
 	pen.write("Player 1: {}    Player 2: {}".format(ScoreP1, ScoreP2), align="center", font=("Courier", 24, "normal") )
 Draw()
 
+<<<<<<< HEAD
 #Configuracion del Teclado - Keyboard configuration
+=======
+#Configuración del Teclado - Keyboard configuration
+>>>>>>> Ver2.0
 def Raqueta1Up():
 	y = raqueta1.ycor()
 	VentanaHeight = ventana.window_height()
@@ -99,11 +130,21 @@ def ChoqueArriba(coordY):
 	VentanaHeight = ventana.window_height()
 	if coordY>= VentanaHeight//2 - 10:
 		pelota.dirY = -pelota.dirY
+<<<<<<< HEAD
+=======
+		PlaySound()
+
+>>>>>>> Ver2.0
 def ChoqueAbajo(coordY):
 	global pelota
 	VentanaHeight = ventana.window_height()
 	if coordY<= -VentanaHeight//2 + 10:
 		pelota.dirY = -pelota.dirY
+<<<<<<< HEAD
+=======
+		PlaySound()
+
+>>>>>>> Ver2.0
 def ChoqueDerecha(coordX):
 	global pelota
 	VentanaWidth = ventana.window_width()
@@ -124,6 +165,10 @@ def ChoqueRaqueta1(coordX, coordY):
 	global pelota, raqueta1
 	if  (raqueta1.ycor() + 40) >= coordY-10 and  coordY + 10 >= (raqueta1.ycor() -40) and coordX - 10 <= raqueta1.xcor() + 10:
 		pelota.dirX = -pelota.dirX
+<<<<<<< HEAD
+=======
+		PlaySound()
+>>>>>>> Ver2.0
 		if coordX - 10 < raqueta1.xcor() + 10:
 			pelota.setx( raqueta1.xcor() + 20 )
 			
@@ -131,11 +176,18 @@ def ChoqueRaqueta2(coordX, coordY):
 	global pelota, raqueta2
 	if  (raqueta2.ycor() + 40) >= coordY-10 and  coordY + 10 >= (raqueta2.ycor() -40) and coordX + 10 >= raqueta2.xcor() - 10:
 		pelota.dirX = -pelota.dirX
+<<<<<<< HEAD
+=======
+		PlaySound()
+>>>>>>> Ver2.0
 		if coordX + 10 >= raqueta2.xcor() - 10:
 			pelota.setx( raqueta2.xcor() - 20 )
 
 #Refreshing
+<<<<<<< HEAD
 
+=======
+>>>>>>> Ver2.0
 while True:
 	ventana.update()
 	#Movimiento Pelota - Ball movement
@@ -143,14 +195,25 @@ while True:
 	pelota.sety( pelota.ycor() + pelota.dirY)
 	ChoqueArriba( pelota.ycor() )
 	ChoqueAbajo( pelota.ycor() )
+<<<<<<< HEAD
 	if ChoqueDerecha( pelota.xcor() ): #Score Player 1
 		ScoreP1+=1
 		pelota.goto(0,0)
 		Draw()
 	if ChoqueIzquierda( pelota.xcor() ): #Score Player 2
+=======
+	if ChoqueDerecha( pelota.xcor() ): #Score Player 1++
+		ScoreP1+=1
+		pelota.goto(0,0)
+		Draw()
+	if ChoqueIzquierda( pelota.xcor() ): #Score Player 2++
+>>>>>>> Ver2.0
 		ScoreP2+=1
 		pelota.goto(0,0)
 		Draw()
 	ChoqueRaqueta1( pelota.xcor(), pelota.ycor())
 	ChoqueRaqueta2( pelota.xcor(), pelota.ycor())
+<<<<<<< HEAD
 
+=======
+>>>>>>> Ver2.0
